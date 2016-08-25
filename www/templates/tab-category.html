@@ -22,7 +22,8 @@
           <ion-item ng-show="studytask==true" ng-repeat="task in study| limitTo:studylimit">
             <div class="item"><i class="icon ion-happy-outline"></i>&nbsp;&nbsp;<a href="#/tab/category/{{task._id}}" style="width:320px;">{{task.name}}</a></div>
           </ion-item>
-          <button class="button button-energized button-small" ng-show="studytask==true&&studylimit==5" ng-click=setStudyLimit(0)>Show More</button>
+          <br/>
+          <button class="button button-energized button-small" style="margin-left: 15px" ng-show="studytask==true&&studylimit==5" ng-click=setStudyLimit(0)>Show More</button>
         </ion-list>
 
         <ion-list>

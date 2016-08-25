@@ -3,23 +3,26 @@
     <div class="row responsive-md">
       <div class="col col-20 userData text-center">
         <div class="userImage" id="userImage">
-
         </div>
+
+        <div>
+          <input type = "file" id="uploadFile"/>
+        </div>
+        <hr/>
         <div class="userInformation">
           <h4 style="font-family: monaco"> Name: {{ user.name  }}</h4>
           <h4 style="font-family: monaco"> Email: {{ user.email }}</h4>
           <h7> User since {{user.dateCreated | date:'yyyy-MM-dd' }}</h7>
         </div>
 
-        <div>
-          <input type = "file" id="uploadFile"/>
-        </div>
+        <hr/>
+
         <div id="hidden-resizer" style="visibility: hidden"></div>
       </div>
       <div class="col col-80 placeholder">
         <div>
-          <h3 style="font-family: monaco">
-            Notifications
+          <h3 style="font-family: monaco; line-height: 40px; background-color: #f1f1f1;">
+            &nbsp;Notifications
           </h3>
           <div>
             <ion-list>
@@ -38,11 +41,11 @@
           </div>
         </div>
         <div>
-          <h3 style="font-family: monaco">
-            My Listings
+          <h3 style="font-family: monaco; line-height: 40px; background-color: #f1f1f1;">
+            &nbsp;My Listings
           </h3>
           <ion-list>
-            <ion-item ng-repeat="task in pendingTasks">
+            <ion-item ng-repeat="task in pendingTasks" style="margin-bottom: 5px">
               <div class="container">
                 <div class="content">
                   <i class="icon ion-happy-outline"></i>&nbsp;&nbsp;
@@ -50,14 +53,14 @@
                   <p> Created on: {{task.dateCreated | date : longDate }}</p>
                 </div>
                 <div class="deleteButton" ng-click="remove(task)">
-                  <h2> &#10006; <h2>
+                  <h2> &#10006; </h2>
                 </div>
               </div>
             </ion-item>
           </ion-list>
         <div>
-          <h3 style="font-family: monaco">
-            Interested Listings
+          <h3 style="font-family: monaco; line-height: 40px; background-color: #f1f1f1;">
+            &nbsp;Interested Listings
           </h3>
           <ion-list>
             <ion-item ng-repeat="task in interestedTasks">
