@@ -518,7 +518,7 @@ angular.module('starter.controllers', ['ngCookies'])
 
     if ($scope.assignedUser == null) {
 
-        errorMessage = "You have not log in yet. Please Log In first."
+        errorMessage = "Log In Required"
 
         $scope.errorPopUp = $sce.trustAsHtml(errorMessage);
     }

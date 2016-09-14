@@ -12,7 +12,7 @@
             </div>
             <div style="margin-top: 45px; text-align:center;font-family:monaco ">
                 <form name="userPostForm" novalidate>
-                    <p ng-bind-html="errorPopUp" class="help-block" style="color:white; background-color:red; font-size: 1.5em; width: 20%; text-align: center; margin-left: 40%; font-family:monaco"></p>
+                    <p ng-bind-html="errorPopUp" class="help-block" style="color:red; font-size: 1.5em; width: 20%; min-width: 300px; text-align: center; margin:auto; font-family:monaco"></p>
                     <div class="form-group">
                         <ion-item>
                             <span><input type="text" ng-model="name.text" name="name" placeholder="Title" style="width: 100%;  font-size: x-large;" class="form-control input-lg text-center" required></span>
@@ -34,7 +34,7 @@
                             </div>
                         </ion-item>
                         <ion-item>
-                            <textarea type="text" name="description" class="form-control input-lg" ng-model="description.text" placeholder="Post your content here ..." style="width: 80%; margin-left: 10%; min-height: 200px; font-size: large;" required>
+                            <textarea type="text" name="description" class="form-control input-lg" ng-model="description.text" placeholder="Content of your post here ..." style="width: 80%; margin-left: 10%; min-height: 200px; font-size: large;" required>
                             </textarea>
                             <p ng-show="userPostForm.description.$invalid && !userPostForm.description.$pristine" class="help-block" style="color:red; background-color: white; font-size: 0.5em; width: 350px; display: inline;font-family:monaco">Please enter a valid Description.</p>
                         </ion-item>

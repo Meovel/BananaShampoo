@@ -16,17 +16,17 @@
                             <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                             <h4><span style="font-family: monaco"><strong>Name</strong></span><span style="color:red;margin-right: 100px;">*</span></h4>
                             <hr>
-                            <input type="text" class="form-control input-lg text-center" placeholder="Your Name" name="name" ng-model="formName.text" style="resize:horizontal; width:320px;" required>
+                            <input type="text" class="form-control input-lg text-center" placeholder="Your Name" name="name" ng-model="formName.text" style="resize:horizontal; width:100%;" required>
                             <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block" style="color:red; background-color: white; font-size: 1em; width: 320px; display: inline;">You name is required.</p>
                             <hr>
                             <h4><span style="font-family: monaco"><strong>Email</strong></span><span style="color:red;margin-right: 100px;font-family: monaco">*</span></h4>
                             <hr>
-                            <input type="email" class="form-control input-lg text-center" placeholder="Your Email" name="email" ng-model="formEmail.text" style="resize:horizontal; width:320px;" required>
+                            <input type="email" class="form-control input-lg text-center" placeholder="Your Email" name="email" ng-model="formEmail.text" style="resize:horizontal; width:100%" required>
                             <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block" style="color:red; background-color: white; font-size: 1em; width: 320px; display: inline;">Please enter a valid email.</p>
                             <hr>
                             <h4><span style="font-family: monaco"><strong>Password</strong></span><span style="color:red;margin-right: 100px;font-family: monaco">*</span></h4>
                             <hr>
-                            <input type="password" class="form-control input-lg text-center" placeholder="Password" name="password" ng-model="formPassword.text" style="resize:horizontal; width:320px;" required>
+                            <input type="password" class="form-control input-lg text-center" placeholder="Password" name="password" ng-model="formPassword.text" style="resize:horizontal; width:100%;" required>
                             <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block" style="color:red; background-color: white; font-size: 1em; width: 320px; display: inline;">The Password is required.</p>
                             <hr>
                         </div>
