@@ -1,4 +1,4 @@
-<ion-view view-title="OZ Student Storage - ANU">
+<ion-view view-title="Banana Shampoo!">
     <ion-content class="padding" id="clouds">
         <div>
             <div class="cloud x1"></div>
@@ -8,25 +8,24 @@
             <div class="cloud x4"></div>
             <div class="cloud x5"></div>
             <div class="cloud x6"></div>
-            <div style="width:30%; min-width:300px; margin:0 auto; margin-top:-380px; ">
+            <div style="width:30%; min-width:300px; margin:0 auto; margin-top:-300px; ">
         <!--    <img src="../img/social-sharing.jpg" style="width: 90%; height:200px; margin-top: -100px;"> -->
                 <div id="addUser-form" class="rowsign">
-                  <img src="../img/ANU.jpg" style="width: 100%"/>
                     <form name="userSignInForm" novalidate>
                         <div class="form-group">
                             <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                             <h4 style="text-align: left; vertical-align: middle;font-family: monaco"><strong>Email</strong></h4>
                             <hr>
-                            <input type="email" class="form-control input-lg text-center" placeholder="Your Email" name="email" ng-model="formEmail.text" style="resize:horizontal; width:100%; text-align: center; vertical-align: middle;" required>
+                            <input type="email" class="form-control input-lg text-center" placeholder="shampoo@banana.com" name="email" ng-model="formEmail.text" style="resize:horizontal; width:100%; text-align: center; vertical-align: middle;" required>
                             <p ng-show="userSignInForm.email.$invalid && !userSignInForm.email.$pristine" class="help-block" style="color:red; background-color: white; font-size: 1em; width: 320px; display: inline;">Please enter a valid email.</p>
                             <hr>
                             <h4 style="text-align: left; vertical-align: middle; font-family: monaco"><strong>Password</strong></h4>
                             <hr>
-                            <input type="password" class="form-control input-lg text-center" placeholder="Password" name="password" ng-model="formPassword.text" style="resize:horizontal; width:100%;" required>
+                            <input type="password" class="form-control input-lg text-center" placeholder="Banana-nana" name="password" ng-model="formPassword.text" style="resize:horizontal; width:100%;" required>
                             <p ng-show="userSignInForm.password.$invalid && !userSignInForm.password.$pristine" class="help-block" style="color:red; background-color: white; font-size: 1em; width: 320px; display: inline;">The Password is required.</p>
                             <hr>
                         </div>
-
+                        <br />
 
                         <!-- createUser() WILL CREATE NEW USERS -->
                         <button  type="submit" class="button button-balanced	button-full" ng-click="userSignIn()" ng-disabled="userSignInForm.$invalid">Log In</button>
