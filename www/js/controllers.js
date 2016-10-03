@@ -72,7 +72,7 @@ angular.module('starter.controllers', ['ngCookies'])
                 $scope.submitForm = function(isValid) {
                     // check to make sure the form is completely valid
                     if (isValid) {
-                        //alert('User '+ $scope.formName.text +' has been add');
+                        alert('You have successfully registerd, please login');
                         $scope.UserAdded = $sce.trustAsHtml('User "' + $scope.formName.text + '" has been add');
                     }
                 };
@@ -155,7 +155,7 @@ angular.module('starter.controllers', ['ngCookies'])
       console.log(err);
     });
 
-    $scope.category = 'Category';
+    $scope.category = 'Other';
 
     $scope.halltask = true;
     $scope.halllimit = 5;
@@ -184,9 +184,17 @@ angular.module('starter.controllers', ['ngCookies'])
     $scope.othertask = false;
     $scope.otherlimit = 5;
 
-    $scope.type = "test"
+    $scope.type = "test";
 
     $scope.showHall = function() {
+        $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Hall"}').success(function(data) {
+          $scope.hall = data.data;
+          //console.log(data);
+
+        }).error(function(err) {
+          console.log(err);
+        });
+
         $scope.category = 'Hall';
         $scope.halltask = true;
         $scope.unilodgetask = false;
@@ -348,6 +356,60 @@ angular.module('starter.controllers', ['ngCookies'])
         $scope.othertask = false;
         $scope.otherlimit = 5;
     }
+    $scope.showDickson = function() {
+        $scope.category = 'Dickson';
+        $scope.dicksontask = true;
+        $scope.halltask = false;
+        $scope.halllimit = 5;
+
+        $scope.unilodgetask = false;
+        $scope.unilodgelimit = 5;
+
+        $scope.civictask = false;
+        $scope.civiclimit = 5;
+
+        $scope.belconnetask = false;
+        $scope.belconnelimit = 5;
+
+        $scope.harrisontask = false;
+        $scope.harrisonlimit = 5;
+
+        $scope.franklintask = false;
+        $scope.franklinlimit = 5;
+
+        $scope.gungahlintask = false;
+        $scope.gungahlinlimit = 5;
+
+        $scope.othertask = false;
+        $scope.otherlimit = 5;
+    }
+    $scope.showOther = function() {
+        $scope.category = 'Other';
+        $scope.othertask = true;
+        $scope.halltask = false;
+        $scope.halllimit = 5;
+
+        $scope.unilodgetask = false;
+        $scope.unilodgelimit = 5;
+
+        $scope.civictask = false;
+        $scope.civiclimit = 5;
+
+        $scope.belconnetask = false;
+        $scope.belconnelimit = 5;
+
+        $scope.harrisontask = false;
+        $scope.harrisonlimit = 5;
+
+        $scope.dicksontask = false;
+        $scope.dicksonlimit = 5;
+
+        $scope.dicksontask = false;
+        $scope.dicksonlimit = 5;
+
+        $scope.othertask = false;
+        $scope.otherlimit = 5;
+    }
 
     $scope.setHallLimit = function(num) {
         $scope.halllimit = $scope.hall.length;
@@ -370,6 +432,12 @@ angular.module('starter.controllers', ['ngCookies'])
     }
     $scope.setFranklinLimit = function(num) {
         $scope.franklinlimit = $scope.franklin.length;
+    }
+    $scope.setDicksonLimit = function(num) {
+        $scope.dicksonlimit = $scope.dickson.length;
+    }
+    $scope.setFranklinLimit = function(num) {
+        $scope.otherlimit = $scope.other.length;
     }
 
 }])
