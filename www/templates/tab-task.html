@@ -5,7 +5,7 @@
             <h1 id="title" class="text-center" style="color:lightsteelblue; font-family: monaco;">Let kindness spread</h1>
 
             <div style="width:25%; float:right; margin-top: 200px;">
-                    <img src="../img/postForm2.jpg" style="width: 90%; height:50%; margin-top: -100px;">
+                    <img src="../img/postForm2.jpg" style="width: 90%; height:50%; margin-top: -30px;">
             </div>
             <div style="width:25%; float:left; margin-top: 200px;">
                     <img src="../img/banana.jpg" style="width: 90%; height:50%; margin-top: -100px;">
@@ -20,6 +20,15 @@
                             <p ng-show="userPostForm.name.$invalid && !userPostForm.name.$pristine" class="help-block" style="color:red; background-color: white; font-size: 0.5em; width: 350px; display: inline;font-family:monaco">Please enter a valid Title.</p>
                         </ion-item>
                         <ion-item>
+                            <div style="float: left">
+                                <div class="postImage form-control input-lg">
+                                <img src="" style="max-width: 100%;" id="postImage" />
+                                </div>
+
+                                <div>
+                                  <input class="" type = "file" id="postFile"/>
+                                </div>
+                            </div>
                             <div style="float: right">
                                 <label>
                                     District:
@@ -36,7 +45,7 @@
                                 </select>
                             </div>
                         </ion-item>
-                        <ion-item>
+                        <ion-item style="max-width: 50%; margin:0 auto;">
                             <textarea type="text" name="description" class="form-control input-lg" ng-model="description.text" placeholder="Content of your post here ..." style="width: 80%; margin-left: 10%; min-height: 200px; font-size: large;" required>
                             </textarea>
                             <p ng-show="userPostForm.description.$invalid && !userPostForm.description.$pristine" class="help-block" style="color:red; background-color: white; font-size: 0.5em; width: 350px; display: inline;font-family:monaco">Please enter a valid Description.</p>

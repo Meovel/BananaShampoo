@@ -1,3 +1,8 @@
+<style>
+.image{
+  content:url({{taskdetail.picture}});
+}
+</style>
 <ion-view view-title="{{taskdetail.name}}">
   <ion-content class="padding">
     <ion-list class="postinfo">
@@ -7,11 +12,12 @@
         <p ng-bind-html="favorite" class="help-block" style="color:red; background-color:white; font-size: 1em; width: 600px; text-align: center;font-family: monaco"></p>
       </ion-item>
       <ion-item>
-        <span style="color:dodgerblue"><strong>Post By:</strong> </span>&nbsp;&nbsp;{{taskdetail.assignedUserName}}
+        <span style="color:dodgerblue"><strong>Region:</strong> </span>&nbsp;&nbsp;{{taskdetail.category}}
       </ion-item>
       <ion-item>
         <span style="color:dodgerblue"><strong>Description:</strong> </span>&nbsp;&nbsp;
         {{taskdetail.description}}
+        <img src="" style="max-width: 50%; max-height: 300px; float: right;" id="postimg">
       </ion-item>
       <ion-item>
        <span style="color:dodgerblue"><strong>Post Date:</strong></span> &nbsp;&nbsp;{{taskdetail.dateCreated}}
@@ -21,6 +27,9 @@
       </ion-item>
       <ion-item>
         <div class="item"><i class="icon ion-email"></i>&nbsp;&nbsp;<span style="color:red"><strong>Email:</strong></span> &nbsp;&nbsp;<a ng-href="mailto:{{userdetail.email}}">{{userdetail.email}}</a></div>
+      </ion-item>
+      <ion-item>
+       
       </ion-item>
     </ion-list>
     <ion-list>

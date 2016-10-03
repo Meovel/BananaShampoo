@@ -177,13 +177,6 @@ angular.module('starter.controllers', ['ngCookies'])
     $scope.type = "test";
 
     $scope.showHall = function() {
-        $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Hall"}').success(function(data) {
-          $scope.hall = data.data;
-          //console.log(data);
-
-        }).error(function(err) {
-          console.log(err);
-        });
 
         $scope.category = 'Hall';
         $scope.halltask = true;
@@ -576,6 +569,7 @@ angular.module('starter.controllers', ['ngCookies'])
     $http.get('http://54.206.88.186:4000/api/tasks/' + $stateParams._id).success(function(data) {
         $scope.taskdetail = data.data;
         $scope.message = $scope.taskdetail.messages;
+        document.getElementById('postimg').src = data.data.picture;
         //console.log(data);
 
         $http.get('http://54.206.88.186:4000/api/users/' + $scope.taskdetail.assignedUser).success(function(data) {
@@ -594,9 +588,12 @@ angular.module('starter.controllers', ['ngCookies'])
 
 .controller('PostCtrl', ['$scope', '$cookies', 'Tasks', 'Users','$sce', function($scope, $cookies, Tasks, Users, $sce) {
 
+    document.getElementById('postFile').addEventListener('change', postFile, false);
+
     $scope.name = { text: "" };
     $scope.category = { text: "Other" };
     $scope.description = { text: "" };
+    $scope.picture = "";
     $scope.assignedUser = $cookies.get('userId');
     $scope.completed = false;
 
@@ -606,6 +603,27 @@ angular.module('starter.controllers', ['ngCookies'])
         errorMessage = "Log In Required"
 
         $scope.errorPopUp = $sce.trustAsHtml(errorMessage);
+    }
+
+    function postFile(input) {
+        if (input.target.files && input.target.files[0] && input.target.files[0].type.match('image.*')) {
+            console.log(input.target.files[0]);
+
+            var file = input.target.files[0];
+
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            reader.onload = (function(theFile) {
+                return function(e) {
+                    // Render thumbnail.
+                    $scope.picture = e.target.result;
+                    document.getElementById('postImage').src = e.target.result;
+                };
+            })(file);
+        } else {
+            console.log('uploading invalid file');
+        }
     }
 
     $scope.submitPost = function() {
@@ -618,13 +636,13 @@ angular.module('starter.controllers', ['ngCookies'])
                 name: $scope.name.text,
                 category: $scope.category.text,
                 description: $scope.description.text,
+                picture: $scope.picture,
                 assignedUser: $scope.assignedUser,
                 assignedUserName: user.name,
                 completed: false
             };
             console.log(post);
             Tasks.post(post).success(function(data) {
-                window.location.href = 'index.html#/tab/category';
                 var task = data.data;
                 user.pendingTasks.push(task._id);
                 Users.put(user._id, user).success(function(data) {
@@ -633,6 +651,7 @@ angular.module('starter.controllers', ['ngCookies'])
                 }).error(function(e) {
                     alert("Error updating user");
                 });
+                window.location.href = 'index.html#/tab/category';
             }).error(function(e) {
                 alert("Error submitting the form")
             });

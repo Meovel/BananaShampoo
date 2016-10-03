@@ -61,6 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
 
     .state('tab.category', {
+      cache: false,
       url: '/category',
       views: {
         'tab-category': {
