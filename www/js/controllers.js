@@ -40,10 +40,10 @@ angular.module('starter.controllers', ['ngCookies'])
                         $window.location.href = 'index.html#/tab/category';
                     }
                     if (!emailTrue)
-                        errorMessage = "The email you enter is not exists, please try again!";
+                        errorMessage = "The email you entered does not exist, please try again";
                     else
                     if (!passwordTrue && emailTrue)
-                        errorMessage = "The password you enter is not true, please try again!";
+                        errorMessage = "The password you entered is not correct, please try again";
 
                     //console.log(errorMessage);
                     $scope.errorPopUp = $sce.trustAsHtml(errorMessage);
@@ -91,234 +91,285 @@ angular.module('starter.controllers', ['ngCookies'])
     $cookies.put('userId', temp);
     //console.log(temp);
 
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Study"}').success(function(data) {
-        $scope.study = data.data;
+    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Hall"}').success(function(data) {
+        $scope.hall = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Sports"}').success(function(data) {
-        $scope.sport = data.data;
+    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "UniLodge"}').success(function(data) {
+        $scope.unilodge = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Food"}').success(function(data) {
-        $scope.food = data.data;
+    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Civic"}').success(function(data) {
+        $scope.civic = data.data;
         //console.log(data.data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Daily"}').success(function(data) {
-        $scope.daily = data.data;
+    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Belconne"}').success(function(data) {
+        $scope.belconne = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Travel"}').success(function(data) {
-        $scope.travel = data.data;
+    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Harrison"}').success(function(data) {
+        $scope.harrison = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Rent"}').success(function(data) {
-        $scope.rent = data.data;
+    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Franklin"}').success(function(data) {
+        $scope.franklin = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Trade"}').success(function(data) {
-        $scope.exchange = data.data;
+    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Gungahlin"}').success(function(data) {
+      $scope.gungahlin = data.data;
+      //console.log(data);
+
+    }).error(function(err) {
+      console.log(err);
+    });
+    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Dickson"}').success(function(data) {
+        $scope.dickson = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
+    });
+    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Other"}').success(function(data) {
+      $scope.other = data.data;
+      //console.log(data);
+
+    }).error(function(err) {
+      console.log(err);
     });
 
     $scope.category = 'Category';
 
-    $scope.studytask = true;
-    $scope.studylimit = 5;
+    $scope.halltask = true;
+    $scope.halllimit = 5;
 
-    $scope.sporttask = false;
-    $scope.sportlimit = 5;
+    $scope.unilodgetask = false;
+    $scope.unilodgelimit = 5;
 
-    $scope.foodtask = false;
-    $scope.foodlimit = 5;
+    $scope.civictask = false;
+    $scope.civiclimit = 5;
 
-    $scope.dailytask = false;
-    $scope.dailylimit = 5;
+    $scope.belconnetask = false;
+    $scope.belconnelimit = 5;
 
-    $scope.traveltask = false;
-    $scope.travellimit = 5;
+    $scope.harrisontask = false;
+    $scope.harrisonlimit = 5;
 
-    $scope.renttask = false;
-    $scope.rentlimit = 5;
+    $scope.franklintask = false;
+    $scope.franklinlimit = 5;
 
-    $scope.exchangetask = false;
-    $scope.exchangelimit = 5;
+    $scope.dicksontask = false;
+    $scope.dicksonlimit = 5;
+
+    $scope.gungahlintask = false;
+    $scope.gungahlinlimit = 5;
+
+    $scope.othertask = false;
+    $scope.otherlimit = 5;
+
     $scope.type = "test"
 
-    $scope.showStudy = function() {
-        $scope.category = 'Study';
-        $scope.studytask = true;
-        $scope.sporttask = false;
-        $scope.sportlimit = 5;
+    $scope.showHall = function() {
+        $scope.category = 'Hall';
+        $scope.halltask = true;
+        $scope.unilodgetask = false;
+        $scope.unilodgelimit = 5;
 
-        $scope.foodtask = false;
-        $scope.foodlimit = 5;
+        $scope.civictask = false;
+        $scope.civiclimit = 5;
 
-        $scope.dailytask = false;
-        $scope.dailylimit = 5;
+        $scope.belconnetask = false;
+        $scope.belconnelimit = 5;
 
-        $scope.traveltask = false;
-        $scope.travellimit = 5;
+        $scope.harrisontask = false;
+        $scope.harrisonlimit = 5;
 
-        $scope.renttask = false;
-        $scope.rentlimit = 5;
+        $scope.franklintask = false;
+        $scope.franklinlimit = 5;
 
-        $scope.exchangetask = false;
-        $scope.exchangelimit = 5;
+        $scope.dicksontask = false;
+        $scope.dicksonlimit = 5;
+
+        $scope.gungahlintask = false;
+        $scope.gungahlinlimit = 5;
+
+        $scope.othertask = false;
+        $scope.otherlimit = 5;
     }
-    $scope.showSports = function() {
-        $scope.category = 'Sports';
-        $scope.sporttask = true;
-        $scope.studytask = false;
-        $scope.studylimit = 5;
+    $scope.showUnilodge = function() {
+        $scope.category = 'Unilodge';
+        $scope.unilodgetask = true;
+        $scope.halltask = false;
+        $scope.halllimit = 5;
 
-        $scope.foodtask = false;
-        $scope.foodlimit = 5;
+        $scope.civictask = false;
+        $scope.civiclimit = 5;
 
-        $scope.dailytask = false;
-        $scope.dailylimit = 5;
+        $scope.belconnetask = false;
+        $scope.belconnelimit = 5;
 
-        $scope.traveltask = false;
-        $scope.travellimit = 5;
+        $scope.harrisontask = false;
+        $scope.harrisonlimit = 5;
 
-        $scope.renttask = false;
-        $scope.rentlimit = 5;
+        $scope.franklintask = false;
+        $scope.franklinlimit = 5;
 
-        $scope.exchangetask = false;
-        $scope.exchangelimit = 5;
+        $scope.dicksontask = false;
+        $scope.dicksonlimit = 5;
+
+        $scope.gungahlintask = false;
+        $scope.gungahlinlimit = 5;
+
+        $scope.othertask = false;
+        $scope.otherlimit = 5;
     }
-    $scope.showFood = function() {
-        $scope.category = 'Food';
-        $scope.foodtask = true;
-        $scope.sportlimit = 5;
-        $scope.sporttask = false;
+    $scope.showCivic = function() {
+        $scope.category = 'Civic';
+        $scope.civictask = true;
+        $scope.halllimit = 5;
+        $scope.halltask = false;
 
-        $scope.studytask = false;
-        $scope.studylimit = 5;
+        $scope.unilodgetask = false;
+        $scope.unilodgelimit = 5;
 
-        $scope.dailytask = false;
-        $scope.dailylimit = 5;
+        $scope.belconnetask = false;
+        $scope.belconnelimit = 5;
 
-        $scope.traveltask = false;
-        $scope.travellimit = 5;
+        $scope.harrisontask = false;
+        $scope.harrisonlimit = 5;
 
-        $scope.renttask = false;
-        $scope.rentlimit = 5;
+        $scope.franklintask = false;
+        $scope.franklinlimit = 5;
 
-        $scope.exchangetask = false;
-        $scope.exchangelimit = 5;
+        $scope.dicksontask = false;
+        $scope.dicksonlimit = 5;
+
+        $scope.gungahlintask = false;
+        $scope.gungahlinlimit = 5;
+
+        $scope.othertask = false;
+        $scope.otherlimit = 5;
     }
-    $scope.showTravel = function() {
-        $scope.category = 'Travel';
-        $scope.studytask = false;
-        $scope.studylimit = 5;
+    $scope.showBelconne = function() {
+        $scope.category = 'Belconne';
+        $scope.belconnetask = true;
+        $scope.halltask = false;
+        $scope.halllimit = 5;
 
-        $scope.sporttask = false;
-        $scope.sportlimit = 5;
+        $scope.unilodgetask = false;
+        $scope.unilodgelimit = 5;
 
-        $scope.foodtask = false;
-        $scope.foodlimit = 5;
+        $scope.civictask = false;
+        $scope.civiclimit = 5;
 
-        $scope.dailytask = false;
-        $scope.dailylimit = 5;
+        $scope.harrisontask = false;
+        $scope.harrisonlimit = 5;
 
-        $scope.traveltask = true;
-        //$scope.travellimit = 5;
+        $scope.franklintask = false;
+        $scope.franklinlimit = 5;
 
-        $scope.renttask = false;
-        $scope.rentlimit = 5;
+        $scope.dicksontask = false;
+        $scope.dicksonlimit = 5;
 
-        $scope.exchangetask = false;
-        $scope.exchangelimit = 5;
+        $scope.gungahlintask = false;
+        $scope.gungahlinlimit = 5;
+
+        $scope.othertask = false;
+        $scope.otherlimit = 5;
     }
-    $scope.showRent = function() {
-        $scope.category = 'Rent';
-        $scope.studytask = false;
-        $scope.studylimit = 5;
+    $scope.showHarrison = function() {
+        $scope.category = 'Harrison';
+        $scope.harrisontask = true;
+        $scope.halltask = false;
+        $scope.halllimit = 5;
 
-        $scope.sporttask = false;
-        $scope.sportlimit = 5;
+        $scope.unilodgetask = false;
+        $scope.unilodgelimit = 5;
 
-        $scope.foodtask = false;
-        $scope.foodlimit = 5;
+        $scope.civictask = false;
+        $scope.civiclimit = 5;
 
-        $scope.dailytask = false;
-        $scope.dailylimit = 5;
+        $scope.belconnetask = false;
+        $scope.belconnelimit = 5;
 
-        $scope.traveltask = false;
-        $scope.travellimit = 5;
+        $scope.franklintask = false;
+        $scope.franklinlimit = 5;
 
-        $scope.renttask = true;
-        //$scope.rentlimit = 5;
+        $scope.dicksontask = false;
+        $scope.dicksonlimit = 5;
 
-        $scope.exchangetask = false;
-        $scope.exchangelimit = 5;
+        $scope.gungahlintask = false;
+        $scope.gungahlinlimit = 5;
+
+        $scope.othertask = false;
+        $scope.otherlimit = 5;
     }
-    $scope.showExchange = function() {
-        $scope.category = 'Trade';
-        $scope.studytask = false;
-        $scope.studylimit = 5;
+    $scope.showFranklin = function() {
+        $scope.category = 'Franklin';
+        $scope.franklintask = true;
+        $scope.halltask = false;
+        $scope.halllimit = 5;
 
-        $scope.sporttask = false;
-        $scope.sportlimit = 5;
+        $scope.unilodgetask = false;
+        $scope.unilodgelimit = 5;
 
-        $scope.foodtask = false;
-        $scope.foodlimit = 5;
+        $scope.civictask = false;
+        $scope.civiclimit = 5;
 
-        $scope.dailytask = false;
-        $scope.dailylimit = 5;
+        $scope.belconnetask = false;
+        $scope.belconnelimit = 5;
 
-        $scope.traveltask = false;
-        $scope.travellimit = 5;
+        $scope.harrisontask = false;
+        $scope.harrisonlimit = 5;
 
-        $scope.renttask = false;
-        $scope.rentlimit = 5;
+        $scope.dicksontask = false;
+        $scope.dicksonlimit = 5;
 
-        $scope.exchangetask = true;
-        //$scope.exchangelimit = 5;
+        $scope.gungahlintask = false;
+        $scope.gungahlinlimit = 5;
+
+        $scope.othertask = false;
+        $scope.otherlimit = 5;
     }
 
-    $scope.setStudyLimit = function(num) {
-        $scope.studylimit = $scope.study.length;
+    $scope.setHallLimit = function(num) {
+        $scope.halllimit = $scope.hall.length;
     }
-    $scope.setSportLimit = function(num) {
-        $scope.sportlimit = $scope.sport.length;
+    $scope.setUnilodgeLimit = function(num) {
+        $scope.unilodgelimit = $scope.unilodge.length;
     }
-    $scope.setFoodLimit = function(num) {
-            $scope.foodlimit = $scope.food.length;
+    $scope.setCivicLimit = function(num) {
+            $scope.civiclimit = $scope.civic.length;
         }
         /*
           $scope.setDailyLimit = function(num){
             $scope.dailylimit= $scope.daily.length;
           }*/
-    $scope.setTravelLimit = function(num) {
-        $scope.travellimit = $scope.travel.length;
+    $scope.setBelconneLimit = function(num) {
+        $scope.belconnelimit = $scope.belconne.length;
     }
-    $scope.setRentLimit = function(num) {
-        $scope.rentlimit = $scope.rent.length;
+    $scope.setHarrisonLimit = function(num) {
+        $scope.harrisonlimit = $scope.harrison.length;
     }
-    $scope.setExchangeLimit = function(num) {
-        $scope.exchangelimit = $scope.exchange.length;
+    $scope.setFranklinLimit = function(num) {
+        $scope.franklinlimit = $scope.franklin.length;
     }
 
 }])
@@ -437,7 +488,7 @@ angular.module('starter.controllers', ['ngCookies'])
 
         if (!clickSetMyFavorite) {
             clickSetMyFavorite = true;
-            $scope.favorite = $sce.trustAsHtml("This post has been added to your favorite list!");
+            $scope.favorite = $sce.trustAsHtml("Added to your favorite list!");
             $scope.myStyle = "#66ffff";
 
             Users.getByUserId($cookies.get('userId')).success(function(user) {
@@ -482,7 +533,7 @@ angular.module('starter.controllers', ['ngCookies'])
 
         } else {
             clickSetMyFavorite = false;
-            $scope.favorite = $sce.trustAsHtml("This post has been took off from your favorite list!");
+            $scope.favorite = $sce.trustAsHtml("Removed from your favorite list!");
             $scope.myStyle = "grey";
         }
         $scope.promise = $timeout(function() { $scope.favorite = $sce.trustAsHtml(""); }, 3000);
@@ -510,7 +561,7 @@ angular.module('starter.controllers', ['ngCookies'])
 .controller('PostCtrl', ['$scope', '$cookies', 'Tasks', 'Users','$sce', function($scope, $cookies, Tasks, Users, $sce) {
 
     $scope.name = { text: "" };
-    $scope.category = { text: "study" };
+    $scope.category = { text: "Other" };
     $scope.description = { text: "" };
     $scope.assignedUser = $cookies.get('userId');
     $scope.completed = false;
