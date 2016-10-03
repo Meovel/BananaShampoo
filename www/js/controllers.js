@@ -140,13 +140,6 @@ angular.module('starter.controllers', ['ngCookies'])
     }).error(function(err) {
       console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Dickson"}').success(function(data) {
-        $scope.dickson = data.data;
-        //console.log(data);
-
-    }).error(function(err) {
-        console.log(err);
-    });
     $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Other"}').success(function(data) {
       $scope.other = data.data;
       //console.log(data);
@@ -174,9 +167,6 @@ angular.module('starter.controllers', ['ngCookies'])
 
     $scope.franklintask = false;
     $scope.franklinlimit = 5;
-
-    $scope.dicksontask = false;
-    $scope.dicksonlimit = 5;
 
     $scope.gungahlintask = false;
     $scope.gungahlinlimit = 5;
@@ -212,9 +202,6 @@ angular.module('starter.controllers', ['ngCookies'])
         $scope.franklintask = false;
         $scope.franklinlimit = 5;
 
-        $scope.dicksontask = false;
-        $scope.dicksonlimit = 5;
-
         $scope.gungahlintask = false;
         $scope.gungahlinlimit = 5;
 
@@ -238,9 +225,6 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.franklintask = false;
         $scope.franklinlimit = 5;
-
-        $scope.dicksontask = false;
-        $scope.dicksonlimit = 5;
 
         $scope.gungahlintask = false;
         $scope.gungahlinlimit = 5;
@@ -266,9 +250,6 @@ angular.module('starter.controllers', ['ngCookies'])
         $scope.franklintask = false;
         $scope.franklinlimit = 5;
 
-        $scope.dicksontask = false;
-        $scope.dicksonlimit = 5;
-
         $scope.gungahlintask = false;
         $scope.gungahlinlimit = 5;
 
@@ -292,9 +273,6 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.franklintask = false;
         $scope.franklinlimit = 5;
-
-        $scope.dicksontask = false;
-        $scope.dicksonlimit = 5;
 
         $scope.gungahlintask = false;
         $scope.gungahlinlimit = 5;
@@ -320,9 +298,6 @@ angular.module('starter.controllers', ['ngCookies'])
         $scope.franklintask = false;
         $scope.franklinlimit = 5;
 
-        $scope.dicksontask = false;
-        $scope.dicksonlimit = 5;
-
         $scope.gungahlintask = false;
         $scope.gungahlinlimit = 5;
 
@@ -347,18 +322,15 @@ angular.module('starter.controllers', ['ngCookies'])
         $scope.harrisontask = false;
         $scope.harrisonlimit = 5;
 
-        $scope.dicksontask = false;
-        $scope.dicksonlimit = 5;
-
         $scope.gungahlintask = false;
         $scope.gungahlinlimit = 5;
 
         $scope.othertask = false;
         $scope.otherlimit = 5;
     }
-    $scope.showDickson = function() {
-        $scope.category = 'Dickson';
-        $scope.dicksontask = true;
+    $scope.showGungahlin = function() {
+        $scope.category = 'Gungahlin';
+        $scope.gungahlintask = true;
         $scope.halltask = false;
         $scope.halllimit = 5;
 
@@ -376,9 +348,6 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.franklintask = false;
         $scope.franklinlimit = 5;
-
-        $scope.gungahlintask = false;
-        $scope.gungahlinlimit = 5;
 
         $scope.othertask = false;
         $scope.otherlimit = 5;
@@ -401,14 +370,11 @@ angular.module('starter.controllers', ['ngCookies'])
         $scope.harrisontask = false;
         $scope.harrisonlimit = 5;
 
-        $scope.dicksontask = false;
-        $scope.dicksonlimit = 5;
+        $scope.franklintask = false;
+        $scope.franklinlimit = 5;
 
-        $scope.dicksontask = false;
-        $scope.dicksonlimit = 5;
-
-        $scope.othertask = false;
-        $scope.otherlimit = 5;
+        $scope.gungahlintask = false;
+        $scope.gungahlinlimit = 5;
     }
 
     $scope.setHallLimit = function(num) {
@@ -433,10 +399,10 @@ angular.module('starter.controllers', ['ngCookies'])
     $scope.setFranklinLimit = function(num) {
         $scope.franklinlimit = $scope.franklin.length;
     }
-    $scope.setDicksonLimit = function(num) {
-        $scope.dicksonlimit = $scope.dickson.length;
+    $scope.setGungahlinLimit = function(num) {
+        $scope.gungahlinlimit = $scope.gungahlin.length;
     }
-    $scope.setFranklinLimit = function(num) {
+    $scope.setOtherLimit = function(num) {
         $scope.otherlimit = $scope.other.length;
     }
 
@@ -665,10 +631,10 @@ angular.module('starter.controllers', ['ngCookies'])
                     console.log("Updated user");
                     console.log(user);
                 }).error(function(e) {
-                    alert(e);
+                    alert("Error updating user");
                 });
             }).error(function(e) {
-                alert(e)
+                alert("Error submitting the form")
             });
         }).error(function(e) {
             alert(e)

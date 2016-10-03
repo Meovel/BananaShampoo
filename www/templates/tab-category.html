@@ -3,16 +3,16 @@
     <ion-content>
 
       <div class="button-bar">
-        <a class="button button-positive button-outline categorylist" ng-click=showHall()><i class="icon ion-ios-book"></i><div class="title">&nbsp;<span style="font-size:18px">Hall</span></div></a>
-        <a class="button button-energized button-outline categorylist" ng-click=showUnilodge()><i class="icon ion-ios-basketball"></i><div class="title">&nbsp;<span style="font-size:18px">Unilodge</span></div></a>
+        <a class="button button-balanced button-outline categorylist" ng-click=showHall()><i class="icon ion-ios-book"></i><div class="title">&nbsp;<span style="font-size:18px">Hall</span></div></a>
+        <a class="button button-balanced button-outline categorylist" ng-click=showUnilodge()><i class="icon ion-ios-basketball"></i><div class="title">&nbsp;<span style="font-size:18px">Unilodge</span></div></a>
         <a class="button button-positive button-outline categorylist" ng-click=showCivic()><i class="icon ion-ios-book"></i><div class="title">&nbsp;<span style="font-size:18px">Civic</span></div></a>
         <a class="button button-positive button-outline categorylist" ng-click=showBelconne()><i class="icon ion-ios-book"></i><div class="title">&nbsp;<span style="font-size:18px">Belconne</span></div></a>
        <!-- <a class="button button-calm" ng-click=showDaily()><i class="icon ion-ios-cart"></i><span class="title">Daily</span></a>-->
       </div>
       <div class="button-bar categorylist">
-        <a class="button button-assertive button-outline" ng-click=showHarrison()><i class="icon ion-ios-nutrition"></i><div class="title">&nbsp;<span style="font-size:18px">Harrison</span></div></a>
-        <a class="button button-energized button-outline" ng-click=showFranklin()><i class="icon ion-android-car"></i><div class="title">&nbsp;<span style="font-size:18px">Franklin</span></div></a>
-        <a class="button button-balanced button-outline" ng-click=showDickson()><i class="icon ion-bag"></i><div class="title">&nbsp;<span style="font-size:18px">Dickson</span></div></a>
+        <a class="button button-positive button-outline" ng-click=showHarrison()><i class="icon ion-ios-nutrition"></i><div class="title">&nbsp;<span style="font-size:18px">Harrison</span></div></a>
+        <a class="button button-positive button-outline" ng-click=showFranklin()><i class="icon ion-android-car"></i><div class="title">&nbsp;<span style="font-size:18px">Franklin</span></div></a>
+        <a class="button button-balanced button-outline" ng-click=showGungahlin()><i class="icon ion-bag"></i><div class="title">&nbsp;<span style="font-size:18px">Gungahlin</span></div></a>
         <a class="button button-royal button-outline" ng-click=showOther()><i class="icon ion-chatbubbles"></i><div class="title">&nbsp;<span style="font-size:18px"><strong>Other</strong></span></div></a>
        <!-- <a class="button button-energized" ng-click=showExchange()><i class="icon ion-chatbubbles"></i><div class="title">Other</div></a>-->
       </div>
@@ -32,6 +32,7 @@
           </ion-item>
           <button class="button button-energized button-small" ng-show="unilodgetask==true&&unilodgelimit==5" ng-click=setUnilodgeLimit(0)>More Posts</button>
         </ion-list>
+
         <ion-list>
           <ion-item ng-show="civictask==true" ng-repeat="task in civic | limitTo:civiclimit">
             <div class="item"><i class="icon ion-happy-outline"></i>&nbsp;&nbsp;<a href="#/tab/category/{{task._id}}">{{task.name}}</a></div>
@@ -52,11 +53,26 @@
           </ion-item>
           <button class="button button-energized button-small" ng-show="harrisontask==true&&harrisonlimit==5" ng-click=setHarrisonLimit(0)>More Posts</button>
         </ion-list>
+
         <ion-list>
           <ion-item ng-show="franklintask==true" ng-repeat="task in franklin | limitTo:franklinlimit">
             <div class="item"><i class="icon ion-happy-outline"></i>&nbsp;&nbsp;<a href="#/tab/category/{{task._id}}">{{task.name}}</a></div>
           </ion-item>
           <button class="button button-energized button-small" ng-show="franklintask==true&&franklinlimit==5" ng-click=setFranklinLimit(0)>More Posts</button>
+        </ion-list>
+
+        <ion-list>
+          <ion-item ng-show="gungahlintask==true" ng-repeat="task in gungahlin | limitTo:gungahlinlimit">
+            <div class="item"><i class="icon ion-happy-outline"></i>&nbsp;&nbsp;<a href="#/tab/category/{{task._id}}">{{task.name}}</a></div>
+          </ion-item>
+          <button class="button button-energized button-small" ng-show="gungahlintask==true&&gungahlinlimit==5" ng-click=setGungahlinLimit(0)>More Posts</button>
+        </ion-list>
+
+        <ion-list>
+          <ion-item ng-show="othertask==true" ng-repeat="task in other | limitTo:otherlimit">
+            <div class="item"><i class="icon ion-happy-outline"></i>&nbsp;&nbsp;<a href="#/tab/category/{{task._id}}">{{task.name}}</a></div>
+          </ion-item>
+          <button class="button button-energized button-small" ng-show="othertask==true&&otherlimit==5" ng-click=setOtherLimit(0)>More Posts</button>
         </ion-list>
 
         </div>
