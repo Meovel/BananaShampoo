@@ -15,11 +15,11 @@
                 <form name="userPostForm" novalidate>
                     <p ng-bind-html="errorPopUp" class="help-block" style="color:red; font-size: 1.5em; width: 20%; min-width: 300px; text-align: center; margin: auto; padding-bottom: 20px; font-family: monaco"></p>
                     <div class="form-group">
-                        <ion-item>
+                        <ion-item style="max-width: 50%; margin:0 auto;">
                             <input type="text" ng-model="name.text" name="name" placeholder="Title" style="width: 100%; font-size: x-large" class="form-control input-lg text-center" required>
                             <p ng-show="userPostForm.name.$invalid && !userPostForm.name.$pristine" class="help-block" style="color:red; background-color: white; font-size: 0.5em; width: 350px; display: inline;font-family:monaco">Please enter a valid Title.</p>
                         </ion-item>
-                        <ion-item>
+                        <ion-item style="max-width: 50%; margin:0 auto;">
                             <div style="float: left">
                                 <div class="postImage form-control input-lg">
                                 <img src="" style="max-width: 100%;" id="postImage" />
@@ -46,7 +46,7 @@
                             </div>
                         </ion-item>
                         <ion-item style="max-width: 50%; margin:0 auto;">
-                            <textarea type="text" name="description" class="form-control input-lg" ng-model="description.text" placeholder="Content of your post here ..." style="width: 80%; margin-left: 10%; min-height: 200px; font-size: large;" required>
+                            <textarea type="text" name="description" class="form-control input-lg" ng-model="description.text" placeholder="Description goes here ..." style="width: 80%; margin-left: 10%; min-height: 200px; font-size: large;" required>
                             </textarea>
                             <p ng-show="userPostForm.description.$invalid && !userPostForm.description.$pristine" class="help-block" style="color:red; background-color: white; font-size: 0.5em; width: 350px; display: inline;font-family:monaco">Please enter a valid Description.</p>
                         </ion-item>
