@@ -147,10 +147,17 @@ angular.module('starter.controllers', ['ngCookies'])
     }).error(function(err) {
       console.log(err);
     });
+    $http.get('http://54.206.88.186:4000/api/tasks').success(function(data) {
+      $scope.all = data.data;
+      //console.log(data);
 
-    $scope.category = 'Other';
+    }).error(function(err) {
+      console.log(err);
+    });
 
-    $scope.halltask = true;
+    $scope.category = 'All Posts';
+
+    $scope.halltask = false;
     $scope.halllimit = 5;
 
     $scope.unilodgetask = false;
@@ -173,6 +180,8 @@ angular.module('starter.controllers', ['ngCookies'])
 
     $scope.othertask = false;
     $scope.otherlimit = 5;
+
+    $scope.alltask = true;
 
     $scope.type = "test";
 
@@ -200,8 +209,11 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.othertask = false;
         $scope.otherlimit = 5;
+
+        $scope.alltask = false;
     }
     $scope.showUnilodge = function() {
+
         $scope.category = 'Unilodge';
         $scope.unilodgetask = true;
         $scope.halltask = false;
@@ -224,8 +236,11 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.othertask = false;
         $scope.otherlimit = 5;
+
+        $scope.alltask = false;
     }
     $scope.showCivic = function() {
+
         $scope.category = 'Civic';
         $scope.civictask = true;
         $scope.halllimit = 5;
@@ -248,8 +263,11 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.othertask = false;
         $scope.otherlimit = 5;
+
+        $scope.alltask = false;
     }
     $scope.showBelconne = function() {
+
         $scope.category = 'Belconne';
         $scope.belconnetask = true;
         $scope.halltask = false;
@@ -272,8 +290,11 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.othertask = false;
         $scope.otherlimit = 5;
+
+        $scope.alltask = false;
     }
     $scope.showHarrison = function() {
+
         $scope.category = 'Harrison';
         $scope.harrisontask = true;
         $scope.halltask = false;
@@ -296,8 +317,11 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.othertask = false;
         $scope.otherlimit = 5;
+
+        $scope.alltask = false;
     }
     $scope.showFranklin = function() {
+
         $scope.category = 'Franklin';
         $scope.franklintask = true;
         $scope.halltask = false;
@@ -320,8 +344,11 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.othertask = false;
         $scope.otherlimit = 5;
+
+        $scope.alltask = false;
     }
     $scope.showGungahlin = function() {
+
         $scope.category = 'Gungahlin';
         $scope.gungahlintask = true;
         $scope.halltask = false;
@@ -344,8 +371,11 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.othertask = false;
         $scope.otherlimit = 5;
+
+        $scope.alltask = false;
     }
     $scope.showOther = function() {
+
         $scope.category = 'Other';
         $scope.othertask = true;
         $scope.halltask = false;
@@ -368,6 +398,36 @@ angular.module('starter.controllers', ['ngCookies'])
 
         $scope.gungahlintask = false;
         $scope.gungahlinlimit = 5;
+
+        $scope.alltask = false;
+    }
+    $scope.showAll = function() {
+
+      $scope.category = 'All';
+      $scope.alltask = true;
+      $scope.halltask = false;
+      $scope.halllimit = 5;
+
+      $scope.unilodgetask = false;
+      $scope.unilodgelimit = 5;
+
+      $scope.civictask = false;
+      $scope.civiclimit = 5;
+
+      $scope.belconnetask = false;
+      $scope.belconnelimit = 5;
+
+      $scope.harrisontask = false;
+      $scope.harrisonlimit = 5;
+
+      $scope.franklintask = false;
+      $scope.franklinlimit = 5;
+
+      $scope.gungahlintask = false;
+      $scope.gungahlinlimit = 5;
+
+      $scope.othertask = false;
+      $scope.otherlimit = 5;
     }
 
     $scope.setHallLimit = function(num) {
@@ -379,10 +439,6 @@ angular.module('starter.controllers', ['ngCookies'])
     $scope.setCivicLimit = function(num) {
             $scope.civiclimit = $scope.civic.length;
         }
-        /*
-          $scope.setDailyLimit = function(num){
-            $scope.dailylimit= $scope.daily.length;
-          }*/
     $scope.setBelconneLimit = function(num) {
         $scope.belconnelimit = $scope.belconne.length;
     }
