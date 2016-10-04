@@ -8,33 +8,37 @@
             <div class="cloud x4"></div>
             <div class="cloud x5"></div>
             <div class="cloud x6"></div>
-            <div style="width:30%; min-width:300px; margin:0 auto; margin-top: -380px;">
+            <div style="width:35%; min-width:300px; margin:0 auto; margin-top: -380px;">
                 <!--<img src="../img/sharing.jpg" style="width: 90%; height:250px; margin-top: -100px;">-->
                 <div id="addUser-form" class="rowsign">
                     <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
                         <div class="form-group">
                             <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                            <br />
                             <h4><span style="font-family: monaco"><strong>Name</strong></span><span style="color:red;margin-right: 100px;">*</span></h4>
                             <hr>
                             <input type="text" class="form-control input-lg text-center" placeholder="Your Lovely Name" name="name" ng-model="formName.text" style="resize:horizontal; width:100%;" required>
                             <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block" style="color:red; background-color: white; font-size: 1em; width: 320px; display: inline;">Your name is required.</p>
                             <hr>
+                            <br />
                             <h4><span style="font-family: monaco"><strong>Email</strong></span><span style="color:red;margin-right: 100px;font-family: monaco">*</span></h4>
                             <hr>
                             <input type="email" class="form-control input-lg text-center" placeholder="Preferably uni email" name="email" ng-model="formEmail.text" style="resize:horizontal; width:100%" required>
                             <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block" style="color:red; background-color: white; font-size: 1em; width: 320px; display: inline;">Please enter a valid email.</p>
                             <hr>
+                            <br />
                             <h4><span style="font-family: monaco"><strong>Password</strong></span><span style="color:red;margin-right: 100px;font-family: monaco">*</span></h4>
                             <hr>
                             <input type="password" class="form-control input-lg text-center" placeholder="Password" name="password" ng-model="formPassword.text" style="resize:horizontal; width:100%;" required>
                             <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block" style="color:red; background-color: white; font-size: 1em; width: 320px; display: inline;">The Password is required.</p>
                             <hr>
                         </div>
+                        <br />
                         <!-- createUser() WILL CREATE NEW USERS -->
+                        <p>You are one step away from make life easier</p>
                         <button type="submit" class="button button-balanced	button-full" ng-click="createUser()" ng-disabled="userForm.$invalid">Sign Up</button>
                         <h3 style="color:red;font-family: monaco">{{failMessage}}</h3>
                         <p ng-bind-html="UserAdded" class="help-block" style="color:red; background-color:white; font-size: 1em; width: 320px;"></p>
-                        <p>You are one step away from make life easier</p>
                         <hr><br />
                         <p>Already a member?</p>
                         <a class="button button-balanced button-full" ng-href="#/tab/signIn" style="text-decoration-color: none; background-color: #30B6E3;">Sign In!</a>

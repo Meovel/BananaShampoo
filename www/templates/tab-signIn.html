@@ -1,4 +1,4 @@
-<ion-view view-title="ANU Info Exchange">
+<ion-view view-title="Campus with no border - Canberra">
     <ion-content class="padding" id="clouds">
         <div>
             <div class="cloud x1"></div>
@@ -8,7 +8,7 @@
             <div class="cloud x4"></div>
             <div class="cloud x5"></div>
             <div class="cloud x6"></div>
-            <div style="width:35%; min-width:300px; margin:0 auto; margin-top:-390px; ">
+            <div style="width:33%; min-width:300px; margin:0 auto; margin-top:-380px; ">
         <!--    <img src="../img/social-sharing.jpg" style="width: 90%; height:200px; margin-top: -100px;"> -->
                 <div id="addUser-form" class="rowsign">
                   <img src="../img/ANU.jpg" style="width: 100%"/>
@@ -26,16 +26,16 @@
                             <p ng-show="userSignInForm.password.$invalid && !userSignInForm.password.$pristine" class="help-block" style="color:red; background-color: white; font-size: 1em; width: 320px; display: inline;">The Password is required.</p>
                             <hr>
                         </div>
-
+                        <br />
+                        <p style="font-style: italic; font-size: smaller; text-align: left;">Proudly presented by ANU Engineering Innovation Team</p>
 
                         <!-- createUser() WILL CREATE NEW USERS -->
                         <button  type="submit" class="button button-balanced	button-full" ng-click="userSignIn()" ng-disabled="userSignInForm.$invalid">Log In</button>
                         <p ng-bind-html="UserSignedIn" class="help-block" style="color:white; background-color:green; font-size: 1.5em; width: 300px;"></p>
                         <p ng-bind-html="errorPopUp" class="help-block" style="color:red; background-color:white; font-size: 1em; width: 300px;"></p>
-                        <hr>
-                        <p>Not a member yet? Join our journey!</p>
-                        <p style="font-style: italic; font-size: smaller; text-align: left;">Proudly presented by ANU Engineering Innovation Team</p>
-                        <a class="button button-assertive button-full" ng-href="#/tab/signUp" style="background-color: #4cd964;">Sign Up!</a>
+                        <!-- <hr> -->
+                        <!-- <p>Not a member yet? Join our journey!</p> -->
+                        <!-- <a class="button button-assertive button-full" ng-href="#/tab/signUp" style="background-color: #4cd964;">Sign Up!</a> -->
                         
                     </form>
                 </div>
