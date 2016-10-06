@@ -1,6 +1,3 @@
-
-
-
 #title {
   font-size: 2.0rem;
   font-weight: 500;
@@ -76,6 +73,10 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
+  color: white;
+}
+.userInformation h4 {
+  color: white;
 }
 .userimg{
   width: 50%;
@@ -135,9 +136,25 @@
   opacity: 1;
 }
 
+.item {
+  background-color: transparent;
+}
 
+#clouds .ion-happy-outline {
+  color: grey;
+}
 
+#win .ion-happy-outline {
+  color: yellow;
+}
 
+#clouds .item a {
+  color: #33cd5f; text-decoration: none
+}
+
+#win a {
+  color: white; text-decoration: none
+}
 
 
 
@@ -148,8 +165,35 @@ body {
   overflow: hidden;
 }
 
+#win{
+  padding-top: 5%;
+  //background: #c9dbe9;
+  background-image: url('../img/Win10.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 1;
+  //background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  //background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  //background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
+#map{
+  padding-top: 5%;
+  //background: #c9dbe9;
+  background-image: url('../img/International.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 1;
+  //background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  //background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  //background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
 #clouds{
-  padding: 75px 0;
   //background: #c9dbe9;
   background-image: url('../img/background.jpg');
   -webkit-background-size: cover;

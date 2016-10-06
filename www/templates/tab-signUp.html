@@ -1,5 +1,5 @@
 <ion-view view-title="Sign Up">
-    <ion-content class="padding" id="clouds">
+    <ion-content class="padding" id="clouds" style="padding-top: 5%">
         <div>
             <div class="cloud x1"></div>
             <!-- Time for multiple clouds to dance around -->
@@ -8,7 +8,7 @@
             <div class="cloud x4"></div>
             <div class="cloud x5"></div>
             <div class="cloud x6"></div>
-            <div style="width:35%; min-width:300px; margin:0 auto; margin-top: -380px;">
+            <div style="width:33%; min-width:300px; margin:0 auto; margin-top: -380px;">
                 <!--<img src="../img/sharing.jpg" style="width: 90%; height:250px; margin-top: -100px;">-->
                 <div id="addUser-form" class="rowsign">
                     <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
@@ -35,7 +35,7 @@
                         </div>
                         <br />
                         <!-- createUser() WILL CREATE NEW USERS -->
-                        <p>You are one step away from make life easier</p>
+                        <p>You are one step away from making life easier</p>
                         <button type="submit" class="button button-balanced	button-full" ng-click="createUser()" ng-disabled="userForm.$invalid">Sign Up</button>
                         <h3 style="color:red;font-family: monaco">{{failMessage}}</h3>
                         <p ng-bind-html="UserAdded" class="help-block" style="color:red; background-color:white; font-size: 1em; width: 320px;"></p>
