@@ -91,21 +91,21 @@ angular.module('starter.controllers', ['ngCookies'])
     $cookies.put('userId', temp);
     //console.log(temp);
 
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Hall"}').success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Hall"}').success(function(data) {
         $scope.hall = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "UniLodge"}').success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "UniLodge"}').success(function(data) {
         $scope.unilodge = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Civic"}').success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Civic"}').success(function(data) {
         $scope.civic = data.data;
         //console.log(data.data);
 
