@@ -112,42 +112,42 @@ angular.module('starter.controllers', ['ngCookies'])
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Belconne"}').success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Belconne"}').success(function(data) {
         $scope.belconne = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Harrison"}').success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Harrison"}').success(function(data) {
         $scope.harrison = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Franklin"}').success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Franklin"}').success(function(data) {
         $scope.franklin = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Gungahlin"}').success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Gungahlin"}').success(function(data) {
       $scope.gungahlin = data.data;
       //console.log(data);
 
     }).error(function(err) {
       console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks?where={"category": "Other"}').success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Other"}').success(function(data) {
       $scope.other = data.data;
       //console.log(data);
 
     }).error(function(err) {
       console.log(err);
     });
-    $http.get('http://54.206.88.186:4000/api/tasks').success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks').success(function(data) {
       $scope.all = data.data;
       //console.log(data);
 
@@ -466,12 +466,12 @@ angular.module('starter.controllers', ['ngCookies'])
     $scope.addMessage = function() {
         //console.log($scope.addmsg);
         //console.log("hi");
-        $http.get('http://54.206.88.186:4000/api/tasks/' + $stateParams._id).success(function(data) {
+        $http.get('http://54.252.167.10:4000/api/tasks/' + $stateParams._id).success(function(data) {
             $scope.taskdetail = data.data;
             $scope.message = $scope.taskdetail.messages;
             //console.log(data.data);
             var array = $scope.message;
-            $http.get('http://54.206.88.186:4000/api/users/' + temp).success(function(data) {
+            $http.get('http://54.252.167.10:4000/api/users/' + temp).success(function(data) {
                 $scope.logname = data.data.name;
                 $scope.logemail = data.data.email;
                 console.log("log in name");
@@ -509,7 +509,7 @@ angular.module('starter.controllers', ['ngCookies'])
                     console.log(task.data)
                     console.log("Assigned user = " + task.data.assignedUser);
 
-                    $http.get('http://54.206.88.186:4000/api/users/' + task.data.assignedUser).success(function(userPost) {
+                    $http.get('http://54.252.167.10:4000/api/users/' + task.data.assignedUser).success(function(userPost) {
                         var userData = userPost.data;
                         userData.notifications.push({
                             'taskId': task.data._id,
@@ -528,7 +528,7 @@ angular.module('starter.controllers', ['ngCookies'])
                     });
 
 
-                    $http.get('http://54.206.88.186:4000/api/users/' + $cookies.get('userId')).success(function(userPost) {
+                    $http.get('http://54.252.167.10:4000/api/users/' + $cookies.get('userId')).success(function(userPost) {
                         var userData = userPost.data;
 
                         var index = userData.interestedTasks.indexOf($scope.taskdetail._id);
@@ -622,13 +622,13 @@ angular.module('starter.controllers', ['ngCookies'])
         $scope.promise = $timeout(function() { $scope.favorite = $sce.trustAsHtml(""); }, 3000);
     }
 
-    $http.get('http://54.206.88.186:4000/api/tasks/' + $stateParams._id).success(function(data) {
+    $http.get('http://54.252.167.10:4000/api/tasks/' + $stateParams._id).success(function(data) {
         $scope.taskdetail = data.data;
         $scope.message = $scope.taskdetail.messages;
         document.getElementById('postimg').src = data.data.picture;
         //console.log(data);
 
-        $http.get('http://54.206.88.186:4000/api/users/' + $scope.taskdetail.assignedUser).success(function(data) {
+        $http.get('http://54.252.167.10:4000/api/users/' + $scope.taskdetail.assignedUser).success(function(data) {
             $scope.userdetail = data.data;
             console.log(data);
         }).error(function(err) {
