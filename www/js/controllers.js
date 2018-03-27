@@ -91,63 +91,63 @@ angular.module('starter.controllers', ['ngCookies'])
     $cookies.put('userId', temp);
     //console.log(temp);
 
-    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Hall"}').success(function(data) {
+    $http.get('http://localhost:4000/api/tasks?where={"category": "Hall"}').success(function(data) {
         $scope.hall = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "UniLodge"}').success(function(data) {
+    $http.get('http://localhost:4000/api/tasks?where={"category": "UniLodge"}').success(function(data) {
         $scope.unilodge = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Civic"}').success(function(data) {
+    $http.get('http://localhost:4000/api/tasks?where={"category": "Civic"}').success(function(data) {
         $scope.civic = data.data;
         //console.log(data.data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Belconne"}').success(function(data) {
+    $http.get('http://localhost:4000/api/tasks?where={"category": "Belconne"}').success(function(data) {
         $scope.belconne = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Harrison"}').success(function(data) {
+    $http.get('http://localhost:4000/api/tasks?where={"category": "Harrison"}').success(function(data) {
         $scope.harrison = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Franklin"}').success(function(data) {
+    $http.get('http://localhost:4000/api/tasks?where={"category": "Franklin"}').success(function(data) {
         $scope.franklin = data.data;
         //console.log(data);
 
     }).error(function(err) {
         console.log(err);
     });
-    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Gungahlin"}').success(function(data) {
+    $http.get('http://localhost:4000/api/tasks?where={"category": "Gungahlin"}').success(function(data) {
       $scope.gungahlin = data.data;
       //console.log(data);
 
     }).error(function(err) {
       console.log(err);
     });
-    $http.get('http://54.252.167.10:4000/api/tasks?where={"category": "Other"}').success(function(data) {
+    $http.get('http://localhost:4000/api/tasks?where={"category": "Other"}').success(function(data) {
       $scope.other = data.data;
       //console.log(data);
 
     }).error(function(err) {
       console.log(err);
     });
-    $http.get('http://54.252.167.10:4000/api/tasks').success(function(data) {
+    $http.get('http://localhost:4000/api/tasks').success(function(data) {
       $scope.all = data.data;
       //console.log(data);
 
